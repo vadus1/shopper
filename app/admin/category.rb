@@ -11,7 +11,7 @@ ActiveAdmin.register Category do
   index do
     column :name
     column :description
-    default_actions
+    actions
   end
 
   show title: :name do
@@ -41,4 +41,6 @@ ActiveAdmin.register Category do
   end
 
   form partial: 'form'
+
+  permit_params *Category.attribute_names
 end

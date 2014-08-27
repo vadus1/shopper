@@ -5,6 +5,4 @@ class Category < ActiveRecord::Base
   has_many :products
 
   mount_uploader :cover, ImageUploader
-
-  attr_accessible :name, :description, :cover
 end

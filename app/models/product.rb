@@ -5,9 +5,7 @@ class Product < ActiveRecord::Base
 
   mount_uploader :cover, ImageUploader
 
-  attr_accessible :category_id, :name, :description, :quantity, :price, :cover
-
-  scope :last_four_products, order('created_at DESC').limit(4)
+  scope :last_four_products, -> { order('created_at DESC').limit(4) }
   scope :available,          -> { where("quantity != ?", 0) }
 
   include PgSearch

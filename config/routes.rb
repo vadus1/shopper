@@ -17,7 +17,7 @@ Shopper::Application.routes.draw do
     resources :items, only: :create
   end
 
-  resources :orders, only: [:show, :index do
+  resources :orders, only: [:show, :index] do
     get ":id/status/:status", action: :show, as: :status, on: :collection
   end
 

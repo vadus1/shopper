@@ -9,5 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require carts
+ *= require categories
+ *= require home
+ *= require layout
+ *= require orders
+ *= require product
  */

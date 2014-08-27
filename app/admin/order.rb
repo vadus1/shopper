@@ -23,8 +23,9 @@ ActiveAdmin.register Order do
     column("Balance") do |order|
       order.balance
     end
-    default_actions
+    actions
   end
 
   form partial: 'form'
+  permit_params *Order.attribute_names
 end
