@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :set_filter, only: [:index]
+  before_filter :set_filter, only: :index
 
   def index
     @products = Product.by_category(params[:category_id])
