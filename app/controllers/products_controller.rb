@@ -16,10 +16,10 @@ class ProductsController < ApplicationController
     add_breadcrumb @product.name, product_path(@product)
   end
 
-private
-  def set_filter
-    session[:min] = params[:min] if params[:min]
-    session[:max] = params[:max] if params[:max]
-    session[:sort_by] = params[:sort_by] || session[:sort_by] || 1
-  end
+  private
+    def set_filter
+      session[:min] = params[:min] if params[:min]
+      session[:max] = params[:max] if params[:max]
+      session[:sort_by] = params[:sort_by] || session[:sort_by] || 1
+    end
 end

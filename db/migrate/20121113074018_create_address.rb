@@ -8,7 +8,7 @@ class CreateAddress < ActiveRecord::Migration
       t.string :country
       t.integer :phone
       t.string :email
- 
+
       t.timestamps
     end
   end

@@ -1,6 +1,6 @@
 class CartsController < OrdersController
   before_filter :check_items, only: [:edit]
-  
+
   def show
     @cart = Order.where(id: params[:id]).includes(items: [:product]).first
   end
@@ -24,7 +24,7 @@ private
     if current_order.items_count.eql?(0)
       respond_to do |format|
         format.js { render js: "window.location = '/'" }
-        format.html { 
+        format.html {
           flash[:error] = "You should add product to cart before purchase."
           redirect_to root_path
         }

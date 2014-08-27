@@ -10,8 +10,8 @@ ActiveAdmin.register Country do
     default_actions
   end
 
-  show title: :name do 
-    attributes_table do 
+  show title: :name do
+    attributes_table do
       row :name
     end
 

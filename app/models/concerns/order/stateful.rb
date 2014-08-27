@@ -2,7 +2,7 @@ class Order
   module Stateful
     extend ActiveSupport::Concern
 
-    included do 
+    included do
       scope :open_orders, -> { with_state(:cart) }
 
       state_machine initial: :cart do
@@ -38,7 +38,7 @@ class Order
       @user_exists = user_exists
 
       if @user_exists and @user_exists.member?
-        errors.add(:guest_email, "Please sign in. This email had already been member.") 
+        errors.add(:guest_email, "Please sign in. This email had already been member.")
       elsif not @user_exists and user.guest?
         errors.add(:guest_email, "Please enter email address.") if guest_email.blank?
         user.update_attributes(email: guest_email)
@@ -47,7 +47,7 @@ class Order
 
     def set_default_address
       user = address.user
-      
+
       if @user_exists and @user_exists.guest?
         user.move_to(@user_exists)
         @user_exists.set_default_to(address)

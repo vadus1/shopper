@@ -27,7 +27,7 @@ window.Cart =
     timer = null
     $('#view_cart').on 'input', 'input[name*="[quantity]"]', (e) ->
       if timer then clearTimeout(timer)
-      timer = setTimeout (=> 
+      timer = setTimeout (=>
           $.ajax
             url: $(@).parents('form').attr('action')
             data: $(@).parents('form').serialize()
@@ -42,7 +42,7 @@ window.Cart =
     timer = null
     $('#shipping').on 'click', 'input[name="order[address_id]"]', (e) ->
       if timer then clearTimeout(timer)
-      timer = setTimeout (=> 
+      timer = setTimeout (=>
           $.ajax
             url: $(@).parents('form').attr('action')
             data: $(@).parents('form').serialize()
@@ -55,13 +55,13 @@ window.Cart =
     $('#current-total').on 'click', 'button.purchase', (e) ->
       e.preventDefault()
       if not $('#purchase').find('#order_address_id').val()
-        noty 
+        noty
           text: "Please choose shipping address."
           type: 'error'
           layout: 'topRight'
           timeout: 4000
       else if $('input[name*="order[items_attributes]"]').length is 0
-        noty 
+        noty
           text: "You should add product to cart before purchase."
           type: 'error'
           layout: 'topRight'

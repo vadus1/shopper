@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 class OrderPdf < Prawn::Document
   def initialize(order, view)
     super(page_size: 'A4', page_layout: :portrait)
@@ -23,7 +22,7 @@ class OrderPdf < Prawn::Document
       bounding_box([bounds.left, bounds.top], width: 250) do
         text "Shopper", size: 20
         move_down 10
-        text "Artellectual Co., Ltd., 5/37 Sukhumvit 71 
+        text "Artellectual Co., Ltd., 5/37 Sukhumvit 71
               Prakanong Nuea, Wattana, Bangkok
               Thailand, 10110", size: 10
       end
@@ -58,9 +57,9 @@ class OrderPdf < Prawn::Document
     [["Product name", "Unit Price", "Quantity", "Full Price"]] +
     @order.items.map do |item|
       [
-        item.product.name, 
-        price(item.product.price), 
-        item.quantity, 
+        item.product.name,
+        price(item.product.price),
+        item.quantity,
         price(item.sub_total)
       ]
     end

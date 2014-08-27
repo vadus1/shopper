@@ -96,7 +96,7 @@ after_fork do |server, worker|
 
   # Sidekiq.configure_client do |config|
   #   config.redis = ConnectionPool.new(size: 1, timeout: 1, &$sidekiq_redis)
-  # end 
+  # end
   # if preload_app is true, then you may also want to check and
   # restart any other shared sockets/descriptors such as Memcached,
   # and Redis.  TokyoCabinet file handles are safe to reuse

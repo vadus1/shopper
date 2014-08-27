@@ -24,17 +24,17 @@ class OrdersController < ApplicationController
     end
   end
 
-private
-  def get_guest
-    @guest = Guest.find_by_email(session[:guest_email])
-    session.delete(:guest_email) unless @guest
-  end
-
-  def get_order
-    if session[:guest_email]
-      Order.where(id: params[:id]).first
-    else
-      current_user.orders.where(id: params[:id]).includes(items: [:product]).first
+  private
+    def get_guest
+      @guest = Guest.find_by_email(session[:guest_email])
+      session.delete(:guest_email) unless @guest
     end
-  end
+
+    def get_order
+      if session[:guest_email]
+        Order.where(id: params[:id]).first
+      else
+        current_user.orders.where(id: params[:id]).includes(items: [:product]).first
+      end
+    end
 end

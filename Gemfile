@@ -18,8 +18,8 @@ gem 'daemons'
 gem 'delayed_job_active_record'
 gem 'prawn', git: 'git://github.com/prawnpdf/prawn.git'
 gem 'pg_search'
-
-platforms :rbx do 
+gem "rails_best_practices"
+platforms :rbx do
   gem 'minitest'
   gem 'rubysl'
   gem 'racc'

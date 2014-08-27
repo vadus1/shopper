@@ -6,7 +6,7 @@ class GuestsController < ApplicationController
     sign_in current_or_guest_user
     redirect_to edit_cart_path(current_order)
   end
-  
+
   def update
     @guest = Guest.find(params[:id])
     @guest.to_member

@@ -7,15 +7,15 @@ ActiveAdmin.register Category do
   before_filter :only => [:show, :edit, :update, :destroy] do
     @category = Category.where(slug: params[:id]).first!
   end
-  
+
   index do
     column :name
     column :description
     default_actions
   end
 
-  show title: :name do 
-    attributes_table do 
+  show title: :name do
+    attributes_table do
       row :name
       row :description
       row "Cover" do |course|
@@ -23,7 +23,7 @@ ActiveAdmin.register Category do
       end
     end
 
-    panel "Product" do 
+    panel "Product" do
       table_for category.products do
         column "Cover" do |product|
           image_tag(product.cover, { size: '50x50' })
@@ -31,7 +31,7 @@ ActiveAdmin.register Category do
         column "Name" do |product|
           link_to product.name, admin_category_product_path(category, product)
         end
-        column "Description" do |product| 
+        column "Description" do |product|
           truncate(product.description, length: 400)
         end
         column :quantity

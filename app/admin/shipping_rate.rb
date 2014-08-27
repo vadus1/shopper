@@ -9,13 +9,13 @@ ActiveAdmin.register ShippingRate do
     default_actions
   end
 
-  show title: :name do 
-    attributes_table do 
+  show title: :name do
+    attributes_table do
       row :name
       row :rate
     end
 
-    panel "Countries" do 
+    panel "Countries" do
       table_for shipping_rate.countries do
         column :name do |country|
           link_to country.name, admin_shipping_rate_country_path(shipping_rate, country)
