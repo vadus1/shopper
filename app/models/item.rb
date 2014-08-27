@@ -2,12 +2,11 @@ class Item < ActiveRecord::Base
   belongs_to :product
   belongs_to :order
 
-  attr_accessible :quantity, :increment, :new_quantity
   attr_accessor   :increment, :new_quantity
 
   before_validation :increment_quantity, if: :increment
 
-  validates :product_id, uniqueness: { scope: [:order_id] }
+  validates :product_id, uniqueness:   { scope: [:order_id] }
   validates :quantity,   numericality: { greater_than: 0, message: "Quantity must be greater than 0" }
   validates :quantity,   numericality: { less_than_or_equal_to: :product_quantity,
                                          message: "Number is over product quantity" }

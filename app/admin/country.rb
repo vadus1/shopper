@@ -7,7 +7,7 @@ ActiveAdmin.register Country do
 
   index do
     column :name
-    default_actions
+    actions
   end
 
   show title: :name do
@@ -23,4 +23,5 @@ ActiveAdmin.register Country do
       end
     end
   end
+  permit_params *Country.attribute_names
 end

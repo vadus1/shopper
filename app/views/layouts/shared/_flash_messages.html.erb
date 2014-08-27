@@ -1,0 +1,8 @@
+<% flash.each do |name, msg| %>
+  <div id='flash' class="alert alert-<%= name == :notice || name == :success ? "success" : "error" %>">
+    <div class='container'>
+      <a class="close">×</a>
+      <%= msg %>
+    </div>
+  </div>
+<% end %>

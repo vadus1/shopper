@@ -6,7 +6,7 @@ ActiveAdmin.register ShippingRate do
    index do
     column :name
     column :rate
-    default_actions
+    actions
   end
 
   show title: :name do
@@ -25,4 +25,5 @@ ActiveAdmin.register ShippingRate do
   end
 
   form partial: 'form'
+  permit_params *ShippingRate.attribute_names
 end
