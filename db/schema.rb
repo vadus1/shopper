@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121228030938) do
+ActiveRecord::Schema.define(:version => 20140827105815) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street_address"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(:version => 20121228030938) do
     t.boolean  "default"
     t.integer  "country_id"
   end
+
+  add_index "addresses", ["country_id"], :name => "index_addresses_on_country_id"
+  add_index "addresses", ["user_id"], :name => "index_addresses_on_user_id"
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -60,12 +63,16 @@ ActiveRecord::Schema.define(:version => 20121228030938) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "cities", ["country_id"], :name => "index_cities_on_country_id"
+
   create_table "countries", :force => true do |t|
     t.string   "name"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.integer  "shipping_rate_id"
   end
+
+  add_index "countries", ["shipping_rate_id"], :name => "index_countries_on_shipping_rate_id"
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -92,6 +99,9 @@ ActiveRecord::Schema.define(:version => 20121228030938) do
     t.float    "sub_total",  :default => 0.0
   end
 
+  add_index "items", ["order_id"], :name => "index_items_on_order_id"
+  add_index "items", ["product_id"], :name => "index_items_on_product_id"
+
   create_table "orders", :force => true do |t|
     t.string   "token"
     t.datetime "created_at",                   :null => false
@@ -103,6 +113,8 @@ ActiveRecord::Schema.define(:version => 20121228030938) do
     t.float    "balance",     :default => 0.0
   end
 
+  add_index "orders", ["address_id"], :name => "index_orders_on_address_id"
+
   create_table "products", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -113,6 +125,8 @@ ActiveRecord::Schema.define(:version => 20121228030938) do
     t.integer  "quantity",    :default => 0
     t.string   "cover"
   end
+
+  add_index "products", ["category_id"], :name => "index_products_on_category_id"
 
   create_table "shipping_rates", :force => true do |t|
     t.string   "name"
