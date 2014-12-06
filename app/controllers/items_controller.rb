@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   def create
     if current_product
-      @item = current_product.items.build(item_params)
+      @item = current_product.items.build(params[:item])
       (@item.order = current_order and @item.save) ? respond_with(@item) : render_box_error_for(@item)
     else
       render_box_error_for nil, {error: ["Product is not available or out of stock."]}
@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = current_order.items.find(params[:id])
-    render_box_error_for(@item) unless @item.update_attributes(item_params)
+    render_box_error_for(@item) unless @item.update_attributes(params[:item])
   end
 
   def destroy
@@ -20,12 +20,8 @@ class ItemsController < ApplicationController
     render_box_error_for(@item) unless @item.destroy
   end
 
-  private
-    def current_product
-      @product = Product.available.where(id: params[:product_id]).first
-    end
-
-    def item_params
-      params.require(:item).permit(:new_quantity, :increment)
-    end
+private
+  def current_product
+    @product = Product.available.where(id: params[:product_id]).first
+  end
 end

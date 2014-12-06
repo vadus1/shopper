@@ -1,24 +1,24 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0'
+gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
 gem 'devise'
-gem 'activeadmin', github: 'activeadmin'
-gem 'friendly_id', '~> 5.0.0'# Note: You MUST use 5.0.0 or greater for Rails 4.0+
-gem 'mini_magick'
+gem 'activeadmin'
+gem 'friendly_id'
+gem 'rmagick'
 gem 'carrierwave'
 gem 'state_machine'
 gem 'breadcrumbs_on_rails'
+gem 'whenever'
 gem 'daemons'
-gem 'delayed_job_active_record', '~> 4.0.1'
+gem 'delayed_job_active_record'
 gem 'prawn', git: 'git://github.com/prawnpdf/prawn.git'
 gem 'pg_search'
 gem "rails_best_practices"
-
 platforms :rbx do
   gem 'minitest'
   gem 'rubysl'
@@ -29,19 +29,16 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0'
+  gem 'sass-rails',   '~> 3.2.3'
   gem 'bootstrap-sass', '~> 2.2.2.0'
-  gem 'coffee-rails', '~> 4.0.0'
+  gem 'coffee-rails', '~> 3.2.1'
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
-  gem 'uglifier', '>= 1.3.0'
-  #gem 'meta_search',    '>= 1.1.0.pre'
+  gem 'uglifier', '>= 1.0.3'
+  gem 'meta_search',    '>= 1.1.0.pre'
 end
 
 group :test, :development do
-  gem 'jazz_hands'
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'rspec-rails', '~> 2.0'
   gem 'capybara'
@@ -51,6 +48,8 @@ group :test, :development do
   gem 'simplecov', :require => false
   gem 'selenium-webdriver'
 end
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

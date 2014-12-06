@@ -6,6 +6,6 @@
   <%= render 'carts/items/items', cart: cart %>
 </div>
 <div class='modal-footer'>
-  <%= link_to 'Continue Shopping', '', :'data-dismiss' => 'modal', :'aria-hidden' => 'true', class: 'btn btn-success' %>
-  <%= link_to 'Check Out', check_out, class: 'btn btn-primary' %>
+  <a class='btn btn-success' data-dismiss='modal' aria-hidden='true '>Continue Shopping</a>
+  <%= link_to 'Check Out', check_out, class: 'btn btn-primary pull-right' %>
 </div>

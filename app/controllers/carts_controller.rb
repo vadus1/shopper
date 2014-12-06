@@ -12,36 +12,32 @@ class CartsController < OrdersController
 
   def update
     @cart = Order.find(params[:id])
-    if @cart.update_attributes(cart_params)
+    if @cart.update_attributes(params[:order])
       setup_guest(@cart) if params[:order][:guest_email]
     else
       render_box_error_for(@cart)
     end
   end
 
-  private
-    def check_items
-      if current_order.items_count.eql?(0)
-        respond_to do |format|
-          format.js { render js: "window.location = '/'" }
-          format.html {
-            flash[:error] = "You should add product to cart before purchase."
-            redirect_to root_path
-          }
-        end
+private
+  def check_items
+    if current_order.items_count.eql?(0)
+      respond_to do |format|
+        format.js { render js: "window.location = '/'" }
+        format.html {
+          flash[:error] = "You should add product to cart before purchase."
+          redirect_to root_path
+        }
       end
     end
+  end
 
-    def setup_guest(cart)
-      reset_session; cart.reload
-      session[:guest_email] = cart.address.email
-    end
+  def setup_guest(cart)
+    reset_session; cart.reload
+    session[:guest_email] = cart.address.email
+  end
 
-    def get_address
-      current_or_guest_user.addresses.where(id: @cart.address_id).first
-    end
-
-    def cart_params
-      params.require(:order).permit(:guest_email, :state_event, :address_id, items_attributes: [:quantity, :id])
-    end
+  def get_address
+    current_or_guest_user.addresses.where(id: @cart.address_id).first
+  end
 end
