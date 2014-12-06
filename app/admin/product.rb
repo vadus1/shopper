@@ -16,5 +16,4 @@ ActiveAdmin.register Product do
       end
     end
   end
-  permit_params *Product.attribute_names
 end

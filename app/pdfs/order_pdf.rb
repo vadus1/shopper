@@ -13,7 +13,7 @@ class OrderPdf < Prawn::Document
   end
 
   def price(num)
-    #self.font("/Library/Fonts/Arial Unicode.ttf") # adjust font path / symbol such as ฿
+    self.font("/Library/Fonts/Arial Unicode.ttf") # adjust font path / symbol such as ฿
     @view.number_to_price(num)
   end
 

@@ -6,7 +6,7 @@ class AddressesController < ApplicationController
   end
 
   def create
-    @address = Address.new(address_params)
+    @address = Address.new(params[:address])
     render_form_error_for @address unless @address.save
   end
 
@@ -16,16 +16,11 @@ class AddressesController < ApplicationController
 
   def update
     @address = Address.find(params[:id])
-    render_form_error_for @address unless @address.update_attributes(address_params)
+    render_form_error_for @address unless @address.update_attributes(params[:address])
   end
 
   def destroy
     @address = Address.find(params[:id])
     @address.destroy
   end
-
-  private
-    def address_params
-      params.require(:address).permit(:street_address, :city, :state, :zip, :country_id, :phone, :user_id, :default)
-    end
 end
