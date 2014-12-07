@@ -1,15 +1,15 @@
 <%= semantic_form_for [:admin, @category], html: { multipart: true } do |f| %>
   <fieldset class="inputs">
     <ol>
-      <li><%= f.input :name %></li>
-      <li><%= f.input :description %></li>
+      <li><%= f.input :name, label: 'Название' %></li>
+      <li><%= f.input :description, label: 'Описание' %></li>
       <li>
         <% if @category.cover? %>
           <%= f.label :cover %>
           <%= image_tag @category.cover_url(:thumb) %>
         <% end %>
       </li>
-      <li><%= f.input :cover %></li>
+      <li><%= f.input :cover, label: 'Изображение' %></li>
     </ol>
   </fieldset>
   <%= f.submit %>

@@ -12,12 +12,6 @@ $border: #F0DED7
 $footer: #f1f1f1
 
 body
-  padding-top: 60px
-  color: $mainText
-  font-family: 'Lato', sans-serif
-  background-color: $mainBackground
-  // background: $mainBackground
-  // background-image: url(asset-path('bg.png', 'image'))
   #flash
     padding: 10px
     margin-top: -20px
@@ -52,6 +46,7 @@ a
   div.caption
     h4.price
       text-align: right
+      margin: 0
     p
       height: $p-height
 
@@ -73,7 +68,7 @@ ul.thumbnails
     &.span4
       @include thumbnail(298px, 198px, 120px)
 
-.navbar-pastel 
+.navbar-pastel
   .navbar-inner
     background-color: $navbar
     background-image: -moz-linear-gradient(top, darken($navbar, 3%), $navbar)
@@ -84,12 +79,12 @@ ul.thumbnails
     background-repeat: repeat-x
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='darken($navbar, 3%)', endColorstr='$navbar', GradientType=0)
     border-color: darken($navbar, 20%)
-  .nav 
-    > .active > a, 
-    > .active > a:hover, 
-    > .active > a:focus, 
-    li.dropdown.open > .dropdown-toggle, 
-    li.dropdown.active > .dropdown-toggle, 
+  .nav
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus,
+    li.dropdown.open > .dropdown-toggle,
+    li.dropdown.active > .dropdown-toggle,
     li.dropdown.open.active > .dropdown-toggle,
       color: white
       background-color: darken($navbar, 5%)
@@ -99,7 +94,7 @@ ul.thumbnails
     li.dropdown > .dropdown-toggle .caret,
       border-top-color: white
       border-bottom-color: white
-    > li 
+    > li
       > a
         &:focus,
         &:hover,
@@ -118,7 +113,7 @@ ul.thumbnails
   &.nav-stacked
     > li > a
       background-color: white
-    > li.active > a, 
+    > li.active > a,
     > li.active > a:hover
       background-color: $hover
       border-color: $hover
@@ -225,7 +220,7 @@ ul
 div[class*="span6"]
   @include control-group(-40px)
 
-form  
+form
   margin-bottom: 0px
   .help-inline > small
     color: #999
@@ -289,7 +284,7 @@ div.modal
           padding-bottom: 16px
   &.order
     @include modal-size(700px, 30%)
-    .modal-body 
+    .modal-body
       padding: 15px 0
       > fieldset
         margin-bottom: 10px
@@ -299,13 +294,13 @@ div.modal
         tr:last-child > td
           border-bottom: 1px solid #ddd
       table.table.total > tfoot
-        th 
+        th
           text-align: right
         th, td
           padding: 4px 8px
           border-top: none
 
-  &.address 
+  &.address
     > form > .modal-body
       max-height: 430px
     &.fade.in
@@ -315,7 +310,7 @@ div.modal
     border-color: $border
 
 #view_cart, #modal
-  table.table 
+  table.table
     td
       vertical-align: middle
     &.items

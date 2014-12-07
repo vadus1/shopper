@@ -1,13 +1,13 @@
 <div class='modal-header'>
   <button class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-  <h4>Invoice No. #<%= order.id %></h4>
+  <h4>Счет №<%= order.id %></h4>
 </div>
 <div class='modal-body'>
   <%= content_tag :fieldset, class: 'clearfix' do %>
     <dl class='dl-horizontal'>
-      <dt>Date</dt>
+      <dt>Дата</dt>
       <dd><%= l order.updated_at, format: :long %></dd>
-      <dt>Shipping Address</dt>
+      <dt>Адрес Доставки</dt>
       <dd><%= order.address.full_address %></dd>
     </dl>
   <% end %>
@@ -16,17 +16,17 @@
     <tfoot>
       <tr>
         <td></td>
-        <th width='165' class='right'>Sub Total</th>
+        <th width='165' class='right'>Общая цена за товар</th>
         <td width='90'><%= number_to_price(order.total) %></td>
       </tr>
       <tr>
         <td></td>
-        <th>Shipping Rate</th>
+        <th>Цена за доставку</th>
         <td><%= number_to_price(order.address.rate) %></td>
       </tr>
       <tr>
         <td></td>
-        <th>Balance</th>
+        <th>Баланс</th>
         <td><%= number_to_price(order.balance) %></td>
       </tr>
     </tfoot>
@@ -36,8 +36,8 @@
   <div class='pull-left'>
     <span class='label label-success'><%= order.state.humanize %></span>
   </div>
-  <button class='btn' data-dismiss='modal' aria-hidden='true'>Close</button>
+  <button class='btn' data-dismiss='modal' aria-hidden='true'>Закрыть</button>
   <%= link_to order_path(order, format: "pdf"), class: 'btn' do %>
-    <i class='icon-print'></i> Print Invoice
+    <i class='icon-print'></i> Распечатать счет
   <% end %>
 </div>

@@ -1,22 +1,22 @@
-<legend>Your Current Total</legend>
+<legend>Итого</legend>
 <div class='total'><%= number_to_price(cart.get_balance) %></div>
 <table class='table'>
   <thead>
     <tr>
-      <th colspan='2'>Details</th>
+      <th colspan='2'>Детали</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Sub Total</td>
+      <td>Общая цена за товар</td>
       <td width='90' class='sub-total price'>
         <%= number_to_price(cart.total) %>
       </td>
     </tr>
     <tr>
-      <td>Shipping Rate</td>
+      <td>Цена за доставку</td>
       <td class='shipping-rate price'>
-        <%= (cart.address.present? and cart.address.country.present? and cart.address.rate) ? number_to_price(cart.address.rate) : "not calculated" %>
+        <%= (cart.address.present? and cart.address.country.present? and cart.address.rate) ? number_to_price(cart.address.rate) : "не рассчитывается" %>
       </td>
     </tr>
   </tbody>

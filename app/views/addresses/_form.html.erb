@@ -1,35 +1,35 @@
 <div class='control-group'>
-  <%= f.label :street_address, class: 'control-label' %>
+  <%= f.label :street_address, 'Улица', class: 'control-label' %>
   <div class='controls'>
     <%= f.text_area :street_address, size: "10x5", class: 'input-xlarge' %>
   </div>
 </div>
 <div class='control-group'>
-  <%= f.label :city, class: 'control-label' %>
+  <%= f.label :city, 'Город', class: 'control-label' %>
   <div class='controls'>
     <%= f.text_field :city, class: 'input-xlarge' %>
   </div>
 </div>
 <div class='control-group'>
-  <%= f.label :state, class: 'control-label' %>
+  <%= f.label :state, 'Регион', class: 'control-label' %>
   <div class='controls'>
     <%= f.text_field :state, class: 'input-xlarge' %>
   </div>
 </div>
 <div class='control-group'>
-  <%= f.label :zip, class: 'control-label' %>
+  <%= f.label :zip, 'Индекс', class: 'control-label' %>
   <div class='controls'>
     <%= f.number_field :zip, class: 'input-xlarge' %>
   </div>
 </div>
 <div class='control-group'>
-  <%= f.label :country_id, class: 'control-label' %>
+  <%= f.label :country_id, 'Страна', class: 'control-label' %>
   <div class='controls'>
     <%= f.select :country_id, options_for_countries((f.object.country_id rescue nil)), include_blank: true %>
   </div>
 </div>
 <div class='control-group'>
-    <%= f.label :phone, class: 'control-label' %>
+    <%= f.label :phone, 'Телефон', class: 'control-label' %>
   <div class='controls'>
     <%= f.phone_field :phone, class: 'input-xlarge' %>
   </div>

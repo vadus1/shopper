@@ -1,7 +1,7 @@
 <%= form_for address, html: { class: 'form-horizontal' }, remote: true do |f| %>
   <div class='modal-header'>
     <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-    <h4><%= address.new_record? ? "New" : "Edit" %> Address</h4>
+    <h4><%= address.new_record? ? "Создать" : "Редактировать" %> Адрес</h4>
   </div>
   <div class='modal-body'>
     <%= content_tag :fieldset do %>
@@ -11,10 +11,10 @@
   <div class='modal-footer'>
     <div class='pull-left'>
       <label class='checkbox'>
-        <%= f.check_box :default %> Set this address as default
+        <%= f.check_box :default %> Установить этот адрес по умолчанию
       </label>
     </div>
-    <button class='btn' data-dismiss='modal' aria-hidden='true'>Close</button>
-    <%= f.submit "Save", class: 'btn btn-success' %>
+    <button class='btn' data-dismiss='modal' aria-hidden='true'>Закрыть</button>
+    <%= f.submit "Сохранить", class: 'btn btn-success' %>
   </div>
 <% end %>

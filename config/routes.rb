@@ -10,10 +10,10 @@ Shopper::Application.routes.draw do
   end
 
   resources :categories, only: :index do
-    resources :products, only: [:index, :show]
+    resources :products, only: :show
   end
 
-  resources :products, only: [:show, :index] do
+  resources :products, only: :show do
     resources :items, only: :create
   end
 

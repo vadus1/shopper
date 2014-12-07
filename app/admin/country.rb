@@ -2,7 +2,7 @@ ActiveAdmin.register Country do
   belongs_to :shipping_rate
 
   action_item do
-    link_to "New city", new_admin_country_city_path(country) if action_name == 'show'
+    link_to "Новый Город", new_admin_country_city_path(country) if action_name == 'show'
   end
 
   index do
@@ -15,9 +15,9 @@ ActiveAdmin.register Country do
       row :name
     end
 
-    panel "City" do
+    panel "Город" do
       table_for country.cities do
-        column "Name" do |city|
+        column "Название" do |city|
           link_to city.name, admin_country_city_path(country, city)
         end
       end

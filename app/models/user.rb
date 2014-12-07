@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, ImageUploader
 
   def update_with_password params={}
-    return super if params[:password].present? or params[:password_confirmation].present?
+    return super if params[:password].present? || params[:password_confirmation].present?
     params.delete :current_password
     update_without_password params
   end
@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    name or email
+    name || email
   end
 
   def name_from_email

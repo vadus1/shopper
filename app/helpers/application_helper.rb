@@ -16,9 +16,23 @@ module ApplicationHelper
   def render_cart_menu
     active = request.path == edit_cart_path(current_order.id) ? 'active' : ''
 
-    content_tag :li, class: "cart #{active}" do
-      link_to (current_user and active.eql?('active')) ? edit_cart_path(current_order.id) : cart_path(current_order), remote: (not active.eql?('active')) do
-        "<i class=\"icon-shopping-cart icon-white\"></i> Cart (#{current_order.items_count})".html_safe
+    content_tag :span, class: "cart-link cart #{active}" do
+      link_to (current_user and active.eql?('active')) ? edit_cart_path(current_order.id) : cart_path(current_order), class: 'cart_link', remote: (not active.eql?('active')) do
+        if current_order.items_count.eql?(0)
+          "Нет товаров"
+        else
+          "Товаров - #{current_order.items_count}".html_safe
+        end
+      end
+    end
+  end
+
+  def render_cart_menu_button
+    active = request.path == edit_cart_path(current_order.id) ? 'active' : ''
+
+    content_tag :div, class: "cart #{active} buttons" do
+      link_to (current_user and active.eql?('active')) ? edit_cart_path(current_order.id) : cart_path(current_order), class: 'cart_link', remote: (not active.eql?('active')) do
+        "<span class='begin'></span><span><b>В корзину</b></span><span class='end'></span><div class='clear'></div>".html_safe
       end
     end
   end

@@ -8,9 +8,9 @@ window.Cart =
     Cart.setShippingAddress() if $('body.carts').length is 1
 
   update: (quantity = 0) ->
-    cart = $('.navbar').find('.cart a')
+    cart = $('.cart-link')
     cart.stop(true, true).effect('pulsate', { times: 3 })
-    cart.html("<i class=\"icon-shopping-cart icon-white\"></i> Cart (#{quantity})")
+    cart.html("Товаров - #{quantity}")
 
   setShippingAddress: ->
     checked = $('#shipping input[name="order[address_id]"]:checked')

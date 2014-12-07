@@ -1,0 +1,368 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+*/
+
+@import "carts";
+@import "categories";
+@import "home";
+@import "layout";
+@import "orders";
+@import "product";
+
+body {
+  font-family: Tahoma, sans-serif;
+  font-size: .8em;
+  color: #333;
+  position: relative;
+  width: 100%;
+  background: #fff image-url('page_bg.png');
+}
+
+.path, .middle, .head, .bottom, .clear, .filter, .banners, .tovar_tags {
+  clear: both;
+}
+
+.head {
+  margin: 0px;
+  overflow: hidden;
+  background: #ddeef9 image-url('head_bg.png') top left repeat-x;
+}
+
+.head .bg {
+  background: image-url('head_bgg.png') top center no-repeat;
+  text-align: center;
+}
+
+.head .align {
+  margin: 0px auto;
+  text-align: left;
+  width: 1024px;
+  position: relative;
+}
+
+.head .logo {
+  margin: 20px 0px 20px 20px;
+  color: #8c8e8c;
+  float: left;
+}
+
+.site_title {
+  position: absolute;
+  top: 20px;
+  left: 545px;
+  color: #87c9f3;
+  width: 180px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.edit_menu {
+  width: 244px;
+  height: 147px;
+  background: image-url('menu_bg.png') top left no-repeat;
+  overflow: hidden;
+  float: left;
+  top: 20px;
+  position: relative;
+}
+
+.edit_menu .padding {
+  padding: 35px 30px 0px 0px;
+}
+
+.edit_menu ul li {
+  list-style: none;
+}
+
+.edit_menu ul.right {
+  position: relative;
+  left: 90px;
+}
+
+li {
+  line-height: 15px;
+}
+
+.number {
+  color: #888;
+  width: 301px;
+  height: 161px;
+  background: image-url('number_bg.png') no-repeat;
+  overflow: hidden;
+  text-align: right;
+  float: left;
+  top: 70px;
+  position: relative;
+  left: -65px;
+  margin-right: -65px;
+  text-align: center;
+}
+
+.number .px {
+  display: inline-block;
+  height: 150px;
+  left: -1px;
+  margin-right: -1px;
+  position: relative;
+  vertical-align: middle;
+  width: 1px;
+}
+
+.number .padding {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 0px 0px 0px;
+}
+
+.number .nm {
+  color: #56bfeb;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.number .nm p {
+  margin: 0px 0px 0.6em;
+}
+
+.basket {
+  float: left;
+  width: 288px;
+  height: 169px;
+  background: image-url('edit_bg.png') top left no-repeat;
+  overflow: hidden;
+  top: -10px;
+  left: -80px;
+  margin-right: -80px;
+  position: relative;
+}
+
+.basket .padding {
+  padding: 35px 0px 0px 25px;
+}
+
+.basket .basket_title, .basket .cabinet_title {
+  display: inline-block;
+}
+
+.basket .basket_title a.current, .basket .cabinet_title a.current {
+  background-position: 0px -35px;
+  font-weight: bold;
+  height: 35px;
+}
+
+.basket .basket_title a, .basket .cabinet_title a {
+  background: image-url('edit_bg_title.png') no-repeat;
+  width: 90px;
+  height: 28px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.basket .basket_title a.current span, .basket .cabinet_title a.current span {
+  color: #fff;
+  border: none;
+}
+
+.basket .basket_title a span, .basket .cabinet_title a span {
+  color: #666;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  position: relative;
+  top: 5px;
+}
+
+.basket .cabinet_title {
+  background-position: -97px -35px;
+}
+
+.basket .basket_title a, .basket .cabinet_title a {
+  background: image-url('edit_bg_title.png') no-repeat;
+  width: 90px;
+  height: 28px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.basket_content {
+  padding: 5px 0px 0px 50px;
+  color: #888;
+}
+
+.cabinet_content {
+  text-align: center;
+  color: #888;
+  padding: 20px 0px 0px 0px;
+}
+
+.basket_content .img {
+  float: left;
+  background: image-url('ico_basket.png') no-repeat 0px -63px;
+  width: 31px;
+  height: 32px;
+  margin: 0px 20px 0px 10px;
+}
+
+.basket_content .buttons {
+  margin: 10px 0px 0px 60px;
+}
+
+.buttons a {
+  float: left;
+  margin: 0px 10px 0px 0px;
+  color: #666;
+  text-decoration: none;
+}
+
+.basket_content .buttons a span.begin {
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  height: 19px;
+  width: 11px;
+}
+
+.basket_content .buttons a span {
+  background-position: 0px -19px;
+  height: 19px;
+  padding: 0px;
+  color: #fff;
+}
+
+.basket_content .buttons a span, .basket_content span.begin, .basket_content span.end {
+  background-image: image-url('button_basket_top.png');
+}
+
+.buttons a span {
+  background-repeat: repeat-x;
+  background-position: 0px -32px;
+  height: 32px;
+  width: auto;
+  padding: 0px 10px;
+}
+
+.buttons a span, span.begin, span.end {
+  display: block;
+  float: left;
+  background-image: image-url('buttons.png');
+}
+
+.basket_content .buttons a span b {
+  bottom: 0px;
+}
+
+.basket_content .buttons a span b {
+  border: none;
+}
+
+.buttons a span b {
+  position: relative;
+  bottom: -7px;
+  border-bottom: 1px dotted;
+}
+
+.basket_content .buttons a span.end {
+  background-position: -11px 0px;
+  background-repeat: no-repeat;
+  height: 19px;
+  width: 11px;
+}
+
+.buttons a span.end {
+  background-position: -11px 0px;
+  background-repeat: no-repeat;
+  height: 32px;
+  width: 11px;
+  padding: 0px;
+}
+
+.basket_content .buttons a span {
+  background-position: 0px -19px;
+  height: 19px;
+  padding: 0px;
+  color: #fff;
+}
+
+.basket_content .buttons a span, .basket_content span.begin, .basket_content span.end {
+  background-image: image-url('button_basket_top.png');
+}
+
+.buttons a span {
+  background-repeat: repeat-x;
+  background-position: 0px -32px;
+  height: 32px;
+  width: auto;
+  padding: 0px 10px;
+}
+
+.cabinet_content {
+  text-align: center;
+  color: #888;
+  padding: 5px 0px 0px 0px;
+}
+
+.basket-block {
+  display: block !important;
+}
+
+.basket-none {
+  display: none !important;
+}
+
+.bottom {
+  background: #ddeef9;
+  border-top: 1px dashed #fff;
+  border-bottom: 1px solid #ddeef9;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.bottom .align {
+  margin: 0px auto;
+  text-align: left;
+  width: 1024px;
+  position: relative;
+}
+
+.copyright {
+  float: right;
+  margin: 20px 0px 0px 0px;
+  text-align: left;
+  color: #666;
+}
+
+.bottom_grey {
+  color: #c0c0c0;
+  font-size: 11px;
+  padding: 10px 20px;
+}
+
+.bottom .edit_menu {
+  top: -10px;
+  left: 20px;
+}
+
+.bottom .number {
+  top: 15px;
+  left: -20px;
+  margin-right: -20px;
+  margin-bottom: -50px;
+}
+
+.well-elderflower {
+  margin-top: 50px;
+}
+
+.show-products {
+  margin-top: 20px;
+}

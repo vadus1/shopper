@@ -1,4 +1,5 @@
 # encoding: utf-8
+require 'prawn'
 class OrderPdf < Prawn::Document
   def initialize(order, view)
     super(page_size: 'A4', page_layout: :portrait)
@@ -13,14 +14,13 @@ class OrderPdf < Prawn::Document
   end
 
   def price(num)
-    self.font("/Library/Fonts/Arial Unicode.ttf") # adjust font path / symbol such as ฿
     @view.number_to_price(num)
   end
 
   def header
     repeat :all do
       bounding_box([bounds.left, bounds.top], width: 250) do
-        text "Shopper", size: 20
+        text "Tokebi", size: 20
         move_down 10
         text "Artellectual Co., Ltd., 5/37 Sukhumvit 71
               Prakanong Nuea, Wattana, Bangkok

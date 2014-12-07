@@ -21,7 +21,7 @@ class OrderMailer < ActionMailer::Base
 
   private
     def send_email(order)
-      mail to: order.address.email, subject: "Order #{order.state.humanize} / Invoice No. ##{order.id}" do |format|
+      mail to: order.address.email, subject: "Заказ #{order.state.humanize} / Счет №#{order.id}" do |format|
         format.html
         format.text
       end

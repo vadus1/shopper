@@ -1,18 +1,22 @@
 ActiveAdmin.register Order do
+  menu priority: 4, label: proc{ I18n.t("active_admin.orders") }
+
   config.per_page = 20
   scope :only_completed, default: true
   scope :only_cart
   scope :only_shipping
   scope :only_cancel
 
+  actions :all, except: :new
+
   index do
-    column "User email" do |order|
+    column "Email пользователя" do |order|
       order.address.email rescue ""
     end
-    column "Address" do |order|
+    column "Адрес" do |order|
       order.address
     end
-    column("Status") do |order|
+    column("Статус") do |order|
       case order.state
         when "cart"      then status_tag(order.state)
         when "purchased" then status_tag(order.state, :ok)
@@ -20,7 +24,7 @@ ActiveAdmin.register Order do
         when "shipped"  then status_tag(order.state, :ok)
       end
     end
-    column("Balance") do |order|
+    column("Баланс") do |order|
       order.balance
     end
     default_actions

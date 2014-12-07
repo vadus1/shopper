@@ -1,8 +1,8 @@
 <legend>
-  Shipping Address
+  Адрес Доставки
   <div class='pull-right'>
     <%= link_to new_cart_address_path(cart), remote: true, class: 'btn btn-small' do %>
-      <i class='icon-plus'></i> New Address
+      <i class='icon-plus'></i> Новый Адрес
     <% end %>
   </div>
 </legend>
@@ -22,7 +22,7 @@
       <% end %>
     <% end %>
     <% if current_user.addresses.size.eql?(0) %>
-      <div class='alert alert-info'>Create new address</div>
+      <div class='alert alert-info'>Создайте новый адрес</div>
     <% end %>
   <% end %>
 </div>

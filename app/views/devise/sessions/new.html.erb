@@ -1,7 +1,7 @@
 <header>
   <div class='container'>
-    <h1>Sign in</h1>
-    <p class='lead'>Don't have an account? <%= link_to "Sign up", new_user_registration_path %></p>
+    <h1>Войти в систему</h1>
+    <p class='lead'>Нет учетной записи? <%= link_to "Зарегистрироваться,", new_user_registration_path %></p>
   </div>
 </header>
 <div class="container">
@@ -12,31 +12,31 @@
           <div class='control-group'>
             <%= f.label :email, class: 'control-label' %>
             <div class='controls'>
-              <%= f.email_field :email, placeholder: "Your Email", autofocus: true %>
+              <%= f.email_field :email, placeholder: "Ваш Email", autofocus: true %>
             </div>
           </div>
           <div class='control-group'>
-            <%= f.label :password, class: 'control-label' %>
+            <%= f.label :password, 'Пароль', class: 'control-label' %>
             <div class='controls'>
-              <%= f.password_field :password, placeholder: "Password" %>
+              <%= f.password_field :password, placeholder: "Пароль" %>
             </div>
           </div>
           <div class='control-group'>
-            <%= content_tag :label, "Remember Me", class: 'control-label' %>
+            <%= content_tag :label, "Запомнить Меня", class: 'control-label' %>
             <div class='controls'>
               <% if devise_mapping.rememberable? %>
                 <%= content_tag :label, class: 'checkbox' do %>
-                  for two weeks <%= f.check_box :remember_me %>
+                  на две недели <%= f.check_box :remember_me %>
                 <% end %>
               <% end %>
             </div>
           </div>
           <div class='control-group no-bottom'>
             <%= content_tag :label, class: 'control-label' do %>
-              <%= link_to "Forgot Password?", new_password_path(resource_name) %>
+              <%= link_to "Забыли Пароль?", new_password_path(resource_name) %>
             <% end %>
             <div class='controls'>
-              <%= f.submit "Sign in", class: 'btn btn-success span3' %>
+              <%= f.submit "Войти в систему", class: 'btn btn-success span3' %>
             </div>
           </div>
         <% end %>

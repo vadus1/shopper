@@ -1,19 +1,20 @@
 <header>
   <div class='container'>
-    <h1>Sign Up</h1>
-    <p class='lead'>Already have an account? <%= link_to "Sign In", new_user_session_path %></p>
+    <h1>Зарегистрироваться в системе</h1>
+    <p class='lead'>Уже есть аккаунт? <%= link_to "Войти в систему", new_user_session_path %></p>
   </div>
 </header>
 <div class="container">
   <div class='row'>
     <div class='span7 offset3'>
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { multipart: true, class: "form-horizontal well well-elderflower"}) do |f| %>
+        <%= devise_error_messages! %>
         <%= content_tag :fieldset do %>
-          <legend>Information</legend>
+          <legend>Информация</legend>
           <div class='control-group'>
-            <%= f.label :name, class: 'control-label' %>
+            <%= f.label :name, 'Имя', class: 'control-label' %>
             <div class='controls'>
-              <%= f.text_field :name, placeholder: "Your Name", autofocus: true %>
+              <%= f.text_field :name, placeholder: "Ваше имя", autofocus: true %>
             </div>
           </div>
           <div class='control-group'>
@@ -23,28 +24,28 @@
             </div>
           </div>
           <div class='control-group'>
-            <%= f.label :avatar, class: 'control-label' %>
+            <%= f.label :avatar, 'Аватар', class: 'control-label' %>
             <div class='controls'>
               <%= image_tag("http://placehold.it/140x140", class: 'img-polaroid') %>
               <p><%= f.file_field :avatar %></p>
             </div>
           </div>
           <div class='control-group'>
-            <%= f.label :password, class: 'control-label' %>
+            <%= f.label :password, 'Пароль', class: 'control-label' %>
             <div class='controls'>
-              <%= f.password_field :password, placeholder: "Password" %>
+              <%= f.password_field :password, placeholder: "Пароль" %>
             </div>
           </div>
           <div class='control-group'>
-            <%= f.label :password_confirmation, 'Retype' ,class: 'control-label' %>
+            <%= f.label :password_confirmation, 'Подтверждение пароля' ,class: 'control-label' %>
             <div class='controls'>
-              <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+              <%= f.password_field :password_confirmation, placeholder: "Подтверждение пароля" %>
             </div>
           </div>
         <% end %>
         <div class='form-actions'>
           <%= f.hidden_field :type, value: "Member" %>
-          <%= f.submit "Sign up", class: 'btn btn-success span3' %>
+          <%= f.submit "Зарегистрироваться", class: 'btn btn-success span3' %>
         </div>
       <% end %>
     </div>

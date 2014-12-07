@@ -1,6 +1,6 @@
 <%= form_for(User.new, as: :user, url: registration_path(:user), html: { class: "form-horizontal well well-elderflower"}) do |f| %>
   <%= content_tag :fieldset do %>
-    <legend>New Customers <small>&mdash; Register free and always will be.</small></legend>
+    <legend>Новый покупатель <small>&mdash; Регистрация бесплатна.</small></legend>
     <div class='control-group'>
       <%= f.label :email, class: 'control-label' %>
       <div class='controls'>
@@ -8,20 +8,20 @@
       </div>
     </div>
     <div class='control-group'>
-      <%= f.label :password, class: 'control-label' %>
+      <%= f.label :password, 'Пароль', class: 'control-label' %>
       <div class='controls'>
-        <%= f.password_field :password, placeholder: "Password" %>
+        <%= f.password_field :password, placeholder: "Пароль" %>
       </div>
     </div>
     <div class='control-group'>
-      <%= f.label :password_confirmation, 'Retype' ,class: 'control-label' %>
+      <%= f.label :password_confirmation, 'Повторите' ,class: 'control-label' %>
       <div class='controls'>
-        <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+        <%= f.password_field :password_confirmation, placeholder: "Подтверждение Пароля" %>
       </div>
     </div>
   <% end %>
   <div class='form-actions'>
     <%= f.hidden_field :type, value: "Member" %>
-    <%= f.submit "Sign up", class: 'btn btn-success span3' %>
+    <%= f.submit "Зарегистрироваться", class: 'btn btn-success span3' %>
   </div>
 <% end %>

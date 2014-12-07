@@ -18,7 +18,10 @@ gem 'daemons'
 gem 'delayed_job_active_record'
 gem 'prawn', git: 'git://github.com/prawnpdf/prawn.git'
 gem 'pg_search'
-gem "rails_best_practices"
+gem 'rails_best_practices'
+# Use unicorn as the app server
+gem 'unicorn'
+
 platforms :rbx do
   gem 'minitest'
   gem 'rubysl'
@@ -39,6 +42,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'pry-rails'
   gem 'quiet_assets'
   gem 'rspec-rails', '~> 2.0'
   gem 'capybara'
@@ -47,21 +51,6 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'simplecov', :require => false
   gem 'selenium-webdriver'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
-
-
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
