@@ -14,7 +14,6 @@ set :scm, "git"
 set :repository, "git@github.com:vadus1/shopper.git"
 set :branch, "master"
 
-
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
@@ -51,18 +50,6 @@ namespace :deploy do
     end
   end
   before "deploy", "deploy:check_revision"
-
-  namespace :assets do
-    desc "Precompile assets locally and then rsync to app servers"
-    task :precompile, :only => { :primary => true } do
-      run_locally "bundle exec rake assets:precompile;"
-      servers = find_servers :roles => [:app], :except => { :no_release => true }
-      servers.each do |server|
-        run_locally "rsync -av ./public/assets/ #{user}@#{server}:#{current_path}/public/assets/;"
-      end
-      run_locally "rm -rf public/assets"
-    end
-  end
 end
 
 namespace :rails do
