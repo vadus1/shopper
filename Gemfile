@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
@@ -21,6 +20,9 @@ gem 'pg_search'
 gem 'rails_best_practices'
 # Use unicorn as the app server
 gem 'unicorn'
+gem 'rails_12factor', group: :production
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 platforms :rbx do
   gem 'minitest'
@@ -42,6 +44,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem "rails-erd"
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'rspec-rails', '~> 2.0'
