@@ -549,7 +549,7 @@ DEPENDENCIES
   rubinius-coverage (~> 2.0.1)
   rubysl
   rvm-capistrano
-  sass-rails (~> 3.2.3)
+  sass-rails
   selenium-webdriver
   shoulda-matchers
   simplecov
