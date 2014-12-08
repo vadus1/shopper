@@ -63,4 +63,9 @@ namespace :rails do
   task :dbconsole, roles: :app do
     run_interactively "bundle exec rails dbconsole #{rails_env}"
   end
+
+  def run_interactively(command, server=nil)
+    server ||= find_servers_for_task(current_task).first
+    exec %Q(ssh -l deploy #{server.host} -t 'sudo su - deploy -c "cd #{current_path} && #{command}"')
+  end
 end
