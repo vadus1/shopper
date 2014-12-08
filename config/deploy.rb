@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-server "146.185.140.164", :web, :app, :db, primary: true
+server "128.199.51.151", :web, :app, :db, primary: true
 
 set :application, "tokebi"
 set :user, "deploy"
