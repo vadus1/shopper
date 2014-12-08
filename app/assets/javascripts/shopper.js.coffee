@@ -7,7 +7,7 @@ $(document).ready ->
 
     if response.noty?
       errors = ""
-      errors += "#{v[0]}\n" for k, v of response.noty 
+      errors += "#{v[0]}\n" for k, v of response.noty
       noty
         text: errors
         type: 'error'
