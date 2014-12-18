@@ -18,7 +18,7 @@ ActiveAdmin.register Product do
     column :name
     column :quantity
     column "Цена" do |product|
-      number_to_currency(product.price)
+      number_to_price(product.price)
     end
     column :created_at
     column :updated_at

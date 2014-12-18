@@ -1,7 +1,7 @@
 # encoding: UTF-8
 module ApplicationHelper
   def number_to_price price
-    number_to_currency(price)
+    number_to_currency(price, precision: 0)
   end
 
   def render_menu_for text, path, regxp = nil

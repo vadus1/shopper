@@ -40,7 +40,7 @@ ActiveAdmin.register Category do
           product.quantity
         end
         column "Цена" do |product|
-          number_to_currency(product.price)
+          number_to_price(product.price)
         end
       end
     end

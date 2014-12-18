@@ -1,32 +1,18 @@
 <div class="bottom">
   <div class="align">
-    <div class="copyright">
-      ©
-      <%= Date.current.year %>
-      Tokebi
-    </div>
-    <div class="edit_menu">
-      <div class="padding">
-        <!-- menu -->
-        <ul>
-          <li><a href="/articles/">Полезное</a></li>
-          <li><a href="/delivery/">Оплата и доставка</a></li>
-        </ul>
-        <ul class="right">
-          <li><a href="/filiali/">Наши филиалы</a></li>
-          <li><a href="/contacts/">Контакты</a></li>
-        </ul>
-        <!-- end: menu -->
-      </div>
-    </div>
     <div class="number">
-      <div class="px"></div>
       <div class="padding">
-        10.00-21.00 ежедневно
-        <div class="nm"><p>+7 (495) 287 3392</p></div>
         <div class="regions_call">
-          Для звонков из регионов
-          <div class="nm">8 (800) 555 8411</div>
+          <div class="regions_call_left">
+            10.00-21.00 ежедневно
+            <br/>
+            <span class="nm">+7 (495) 287 3392</span>
+          </div>
+          <div class="regions_call_right">
+            Для звонков из регионов
+            <br/>
+            <span class="nm">8 (800) 555 8411</span>
+          </div>
         </div>
       </div>
     </div>
@@ -34,5 +20,13 @@
   </div>
 </div>
 <div class="bottom_grey">
-  <p><noindex>Вся информация, размещенная на сайте www.tokebi.ru, ни при каких условиях не является публичной офертой или рекламой, определяемой положениями статьи 437(2) ГК РФ и носит исключительно информационный (справочный) характер. Для получения подробной информации о стоимости, наличии, характеристиках товара, сроках и условиях его поставки обращайтесь по указанным телефонам.</noindex></p>
+  <ul>
+    <li><%= link_to 'Полезное', '#', class: 'footer-nav' %></li>
+    <%= image_tag 'bullet.png', class: 'bullet' %>
+    <li><%= link_to 'Оплата и доставка', '#', class: 'footer-nav' %></li>
+    <%= image_tag 'bullet.png', class: 'bullet' %>
+    <li><%= link_to 'Наши филиалы', '#', class: 'footer-nav' %></li>
+    <%= image_tag 'bullet.png', class: 'bullet' %>
+    <li><%= link_to 'Контакты', '#', class: 'footer-nav' %></li>
+  </ul>
 </div>

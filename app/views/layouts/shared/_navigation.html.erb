@@ -1,0 +1,28 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul>
+      <li><%= link_to 'Полезное', '#', class: 'header-nav' %></li>
+      <%= image_tag 'bullet-white.png', class: 'bullet-white' %>
+      <li><%= link_to 'Оплата и доставка', '#', class: 'header-nav' %></li>
+      <%= image_tag 'bullet-white.png', class: 'bullet-white' %>
+      <li><%= link_to 'Наши филиалы', '#', class: 'header-nav' %></li>
+      <%= image_tag 'bullet-white.png', class: 'bullet-white' %>
+      <li><%= link_to 'Контакты', '#', class: 'header-nav' %></li>
+      <%= image_tag 'list.png', class: 'bullet-white' %>
+      <% if current_user %>
+        <li><%= link_to "Добро пожаловать, #{current_user}".html_safe, edit_user_registration_path, class: 'link-nav' unless current_user.guest? %></li>
+      <% else %>
+        <li><%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'button-nav' %></li>
+      <% end %>
+      <%= image_tag 'list.png', class: 'bullet-white' %>
+      <%= image_tag 'basket.png', class: 'basket-img' %>
+      Корзина
+      <%= render_cart_menu %>
+      <% if current_user %>
+        <li><%= link_to "Выйти", destroy_user_session_path, method: :delete, class: 'button-nav' %></li>
+      <% else %>
+        <li><%= link_to 'Войти', new_user_session_path, class: 'button-nav' %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

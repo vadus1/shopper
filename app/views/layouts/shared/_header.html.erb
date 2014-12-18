@@ -1,67 +1,22 @@
 <div class="head">
   <div class="bg">
     <div class="align">
+      <%= render "layouts/shared/navigation" %>
       <div class="logo">
         <%= link_to root_path do %>
           <%= image_tag 'logo.png', alt: 'Интернет-магазин посуды' %>
         <% end %>
       </div>
-      <div class="site_title">Интернет-магазин посуды</div>
-      <div class="edit_menu">
-        <div class="padding">
-          <!-- menu -->
-          <ul>
-            <li><a href="/articles/">Полезное</a></li>
-            <li><a href="/delivery/">Оплата и доставка</a></li>
-          </ul>
-          <ul class="right">
-            <li><a href="/filiali/">Наши филиалы</a></li>
-            <li><a href="/contacts/">Контакты</a></li>
-          </ul>
-          <!-- end: menu -->
-        </div>
-      </div>
-      <div class="number">
-        <div class="px"></div>
-        <div class="padding">
+      <div class="header-phone">
+        <div class="regions_call_header_top">
           10.00-21.00 ежедневно
-          <div class="nm"><p>+7 (495) 287 3392</p></div>
-          <div class="regions_call">
-            Для звонков из регионов
-            <div class="nm">8 (800) 555 8411</div>
-          </div>
+          <br/>
+          <span class="nm">+7 (495) 287 3392</span>
         </div>
-      </div>
-      <div class="basket">
-        <div class="padding">
-          <ul class="top_tabs">
-            <li class="basket_title"><a href="#basket" class="current"><span>Корзина</span></a></li>
-            <li class="cabinet_title"><a href="#cabinet"><span>Кабинет</span></a></li>
-          </ul>
-        </div>
-        <div class="top_content">
-          <div class="basket_content" id="basket" style="display: block;">
-            <!-- top_basket -->
-            <span class="img"></span>
-            <%= render_cart_menu %>
-            <%= render_cart_menu_button %>
-            <div class="clear"></div>
-            <!-- end: top_basket -->
-          </div>
-          <div class="cabinet_content" id="cabinet" style="display: none;">
-            <!-- auth_top -->
-            <% if current_user %>
-              <%= link_to "Добро пожаловать, #{current_user}".html_safe, edit_user_registration_path unless current_user.guest? %>
-              <br/>
-              <%= link_to "История заказов", user_orders_path(current_user) unless current_user.guest? %>
-              <br/>
-              <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
-            <% else %>
-              <%= link_to 'Войти  |  ', new_user_session_path %>
-              <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-            <% end %>
-            <!-- end: auth_top -->
-          </div>
+        <div class="regions_call_header">
+          Для звонков из регионов
+          <br/>
+          <span class="nm">8 (800) 555 8411</span>
         </div>
       </div>
     </div>
