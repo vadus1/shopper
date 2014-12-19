@@ -18,6 +18,7 @@ gem 'delayed_job_active_record'
 gem 'prawn', git: 'git://github.com/prawnpdf/prawn.git'
 gem 'pg_search'
 gem 'rails_best_practices'
+gem 'rollbar', '~> 1.3.0'
 # Use unicorn as the app server
 gem 'unicorn'
 gem 'therubyracer'

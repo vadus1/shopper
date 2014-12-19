@@ -9,6 +9,7 @@ set :port, 22
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :shared_children, shared_children + %w{public/uploads}
 
 set :scm, "git"
 set :repository, "git@github.com:vadus1/shopper.git"
@@ -50,6 +51,15 @@ namespace :deploy do
     end
   end
   before "deploy", "deploy:check_revision"
+
+  task :notify_rollbar, roles: :app do
+    set :revision, `git log -n 1 --pretty=format:"%H"`
+    set :local_user, `whoami`
+    set :rollbar_token, 'f79b7a049ac14de091c2610a73f2c805'
+    rails_env = fetch(:rails_env, 'production')
+    run "curl https://api.rollbar.com/api/1/deploy/ -F access_token=#{rollbar_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user} >/dev/null 2>&1", :once => true
+  end
+  after :deploy, 'notify_rollbar'
 end
 
 namespace :rails do
