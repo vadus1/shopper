@@ -8,7 +8,7 @@ window.Cart =
     Cart.setShippingAddress() if $('body.carts').length is 1
 
   update: (quantity = 0) ->
-    cart = $('.cart-link')
+    cart = $('.cart-link a')
     cart.stop(true, true).effect('pulsate', { times: 3 })
     cart.html("Товаров - #{quantity}")
 

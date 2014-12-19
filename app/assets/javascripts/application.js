@@ -21,7 +21,3 @@
 //= require shopper
 //= require carts
 //= require products
-
-$(function() {
-  $(".basket").tabs();
-});
