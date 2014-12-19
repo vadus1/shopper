@@ -1,13 +1,13 @@
 <div class="navbar">
   <div class="navbar-inner">
     <ul>
-      <li><%= link_to 'Полезное', '#', class: 'header-nav' %></li>
+      <li><%= link_to 'Полезное', useful_information_path, class: 'header-nav' %></li>
       <%= image_tag 'bullet-white.png', class: 'bullet-white' %>
-      <li><%= link_to 'Оплата и доставка', '#', class: 'header-nav' %></li>
+      <li><%= link_to 'Оплата и доставка', delivery_path, class: 'header-nav' %></li>
       <%= image_tag 'bullet-white.png', class: 'bullet-white' %>
-      <li><%= link_to 'Другие товары', '#', class: 'header-nav' %></li>
+      <li><%= link_to 'Другие товары', catalog_path, class: 'header-nav' %></li>
       <%= image_tag 'bullet-white.png', class: 'bullet-white' %>
-      <li><%= link_to 'Контакты', '#', class: 'header-nav' %></li>
+      <li><%= link_to 'Контакты', contacts_path, class: 'header-nav' %></li>
       <%= image_tag 'list.png', class: 'bullet-white' %>
       <% if current_user %>
         <li><%= link_to "Добро пожаловать, #{current_user}".html_safe, edit_user_registration_path, class: 'link-nav' unless current_user.guest? %></li>

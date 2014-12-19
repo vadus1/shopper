@@ -32,6 +32,19 @@ body {
   background: #fff image-url('page_bg.png');
 }
 
+.btn-inverse {
+  background-color: #8fc637;
+  background-image: -moz-linear-gradient(top, #8fc637, #8fc637);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8fc637), to(#8fc637));
+  background-image: -webkit-linear-gradient(top, #8fc637, #8fc637);
+  background-image: -o-linear-gradient(top, #8fc637, #8fc637);
+  background-image: linear-gradient(to bottom, #8fc637, #8fc637);
+  &:hover {
+    background-color: #8fc637;
+    opacity: 0.8;
+  }
+}
+
 .path, .middle, .head, .bottom, .clear, .filter, .banners, .tovar_tags {
   clear: both;
 }

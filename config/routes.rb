@@ -35,4 +35,8 @@ Shopper::Application.routes.draw do
   resources :guests, only: [:new, :create, :update]
 
   root to: 'home#index'
+  get 'delivery',           controller: :pages, action: :delivery
+  get 'contacts',           controller: :pages, action: :contacts
+  get 'useful-information', controller: :pages, action: :useful_information, as: :useful_information
+  get 'catalog',            controller: :pages, action: :catalog
 end
