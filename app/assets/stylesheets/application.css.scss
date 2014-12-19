@@ -36,6 +36,10 @@ body {
   clear: both;
 }
 
+.logo-header {
+  font-size: 18px;
+  color: #00536c;
+}
 .head {
   margin: 0px;
   overflow: hidden;
@@ -55,6 +59,7 @@ body {
 }
 
 .head .logo {
+  text-align: center;
   margin: 20px 0px 20px 0px;
   color: #8c8e8c;
   float: left;
