@@ -18,7 +18,6 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
-after "deploy", 'deploy:notify_rollbar'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -28,7 +27,7 @@ namespace :deploy do
     end
   end
 
-  before "deploy:restart", :symlink_directories
+  before "deploy:restart", "deploy:symlink_directories"
   task :symlink_directories do
     run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
   end
@@ -64,6 +63,7 @@ namespace :deploy do
     rails_env = fetch(:rails_env, 'production')
     run "curl https://api.rollbar.com/api/1/deploy/ -F access_token=#{rollbar_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user} >/dev/null 2>&1", :once => true
   end
+  after "deploy", 'deploy:notify_rollbar'
 end
 
 namespace :rails do
