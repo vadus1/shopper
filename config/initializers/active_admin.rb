@@ -119,7 +119,7 @@ ActiveAdmin.setup do |config|
   #
   config.batch_actions = true
 
-
+  config.favicon = '/assets/favicon.ico'
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your
