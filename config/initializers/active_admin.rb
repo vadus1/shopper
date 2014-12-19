@@ -112,14 +112,12 @@ ActiveAdmin.setup do |config|
   #     without_comments.allow_comments = false
   #   end
 
-
+  config.favicon = '/assets/favicon.ico'
   # == Batch Actions
   #
   # Enable and disable Batch Actions
   #
   config.batch_actions = true
-
-  config.favicon = '/assets/favicon.ico'
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your
